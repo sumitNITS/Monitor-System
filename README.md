@@ -49,3 +49,22 @@ Now access the application using "localhost":"port" OR "ip-of-machine":"port" ðŸ
 ```bash
 docker run -d -p <port>:5000 --name monitorsystem sumit0058/monitorsystem
 ```
+
+### Instructions to run this project in local Kubernetes minikube 
+
+- Start minikube 
+- cd to Monitor-System
+- Run the below commands 
+```bash
+kubectl apply -f monitorsystem-deployment.yml
+```
+
+```bash
+kubectl apply -f monitorsystem-service.yml
+```
+
+```bash
+kubectl port-forward service/monitorsystem-deployment <port>:5000
+```
+
+Now access the application using "localhost":"port" OR "ip-of-machine":"port" ðŸš€
