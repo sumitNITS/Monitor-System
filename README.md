@@ -29,3 +29,23 @@ python app.py
 
 Now visit the URL http://127.0.0.1:5000/ and explore the application 🚀
 
+### Instructions to run this project as Docker container
+
+- cd to Monitor-System
+- Build an image out of Dockerfile using the command 
+```bash
+docker build . -t <image-name>
+```
+- Start the container with the docker image using the command
+```bash
+docker run -d -p <port>:5000 --name monitorsystem <image-name> 
+```
+Now access the application using "localhost":"port" OR "ip-of-machine":"port" 🚀
+
+
+### Instructions to run this project using dockerhub image
+
+- Access the application using the command 
+```bash
+docker run -d -p <port>:5000 --name monitorsystem sumit0058/monitorsystem
+```
