@@ -68,3 +68,7 @@ kubectl port-forward service/monitorsystem-deployment <port>:5000
 ```
 
 Now access the application using "localhost":"port" OR "ip-of-machine":"port" 🚀
+
+### Want to improve this application?
+
+Please follow the [Contributing Guidelines](https://github.com/sumitNITS/Monitor-System/blob/main/CONTRIBUTING.md)
