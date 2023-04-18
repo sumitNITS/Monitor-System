@@ -20,7 +20,7 @@ git clone https://github.com/sumitNITS/Monitor-System.git
 - cd to Monitor-System
 - Install all the dependencies for this project using the command
 ```bash
-pip install app_requirement.txt
+pip install -r app_requirement.txt
 ```
 - Run the below command to start the application
 ```bash 
