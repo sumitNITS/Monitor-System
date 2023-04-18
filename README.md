@@ -31,6 +31,10 @@ Now visit the URL http://127.0.0.1:5000/ and explore the application 🚀
 
 ### Instructions to run this project as Docker container
 
+- Clone this project using the command
+```bash
+git clone https://github.com/sumitNITS/Monitor-System.git
+```
 - cd to Monitor-System
 - Build an image out of Dockerfile using the command 
 ```bash
@@ -52,6 +56,10 @@ docker run -d -p <port>:5000 --name monitorsystem sumit0058/monitorsystem
 
 ### Instructions to run this project in local Kubernetes minikube 
 
+- Clone this project using the command
+```bash
+git clone https://github.com/sumitNITS/Monitor-System.git
+```
 - Start minikube 
 - cd to Monitor-System
 - Run the below commands 
