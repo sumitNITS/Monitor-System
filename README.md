@@ -1,6 +1,6 @@
 ## Web App to Monitor Your System Health 
 
-![System Monitoring](https://user-images.githubusercontent.com/37767537/230759231-2b6762c9-c652-4fd7-8487-5042689fb873.png)
+![monitorsystem](https://user-images.githubusercontent.com/37767537/232860146-e4475b3d-9f17-432e-ac0e-a6fc6003fde3.png)
 
 ### A Few features of this project include
 
