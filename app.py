@@ -1,5 +1,6 @@
 import os
 import psutil
+import platform
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -17,7 +18,7 @@ def index():
         mem_metric = psutil.virtual_memory().percent
         disk_metric = psutil.disk_usage('/').percent
         system_info = {
-            'hostname': psutil.boot_time(),
+            'hostname': platform.node(),
             'cpu_count': psutil.cpu_count(),
             'disk_partitions': psutil.disk_partitions(),
         }
