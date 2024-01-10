@@ -29,20 +29,20 @@ phases:
       # - command
   pre_build:
     commands:
-      - echo "Initiated the Prebuild and checking the code"
+      - echo "Initiated the Prebuild and login to dockerhub"
+      - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin
       # - command
       # - command
   build:
     commands:
       - echo "Building the Docker Image"
       - docker build . -t "$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:latest"
-      - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin
-      - docker push "$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:latest"
       # - command
       # - command
   post_build:
     commands:
-      - echo "Build and Push the docker image to dockerhub completed!"
+      - echo "Pushing the docker image to dockerhub"
+      - docker push "$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:latest"
       # - command
       # - command
 #reports:
