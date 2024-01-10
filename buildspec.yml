@@ -30,8 +30,9 @@ phases:
       # - command
   pre_build:
     commands:
-      - echo "Installing the app requirements"
-      - pip3 install --no-cache-dir -r app_requirement.txt
+      - echo "Initiated the Prebuild and checking the code"
+      # - echo "Installing the app requirements"
+      # - pip3 install --no-cache-dir -r app_requirement.txt
       # - command
       # - command
   build:
