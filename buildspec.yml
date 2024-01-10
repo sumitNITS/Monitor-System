@@ -38,9 +38,9 @@ phases:
   build:
     commands:
       - echo "Building the Docker Image"
-      - docker build -t "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:latest" .
+      - docker build -t "$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:latest" .
       - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"
-      - docker push "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:latest"
+      - docker push "$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:latest"
       # - command
       # - command
   post_build:
