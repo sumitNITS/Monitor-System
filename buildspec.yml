@@ -5,7 +5,6 @@ env:
      # key: "value"
      # key: "value"
   parameter-store:
-    DOCKER_REGISTRY_URL: /dev/monitor-system/docker-registry/url
     DOCKER_REGISTRY_USERNAME: /dev/monitor-system/docker-credentials/username
     DOCKER_REGISTRY_PASSWORD: /dev/monitor-system/docker-credentials/password
   #secrets-manager:
@@ -31,14 +30,12 @@ phases:
   pre_build:
     commands:
       - echo "Initiated the Prebuild and checking the code"
-      # - echo "Installing the app requirements"
-      # - pip3 install --no-cache-dir -r app_requirement.txt
       # - command
       # - command
   build:
     commands:
       - echo "Building the Docker Image"
-      - docker build -t "$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:latest" .
+      - docker build . -t "$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:latest"
       - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin
       - docker push "$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:latest"
       # - command
