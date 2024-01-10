@@ -1,10 +1,9 @@
 version: 0.2
 
 env:
-  variables:
-    TIMESTAMP: $(date '+%Y%m%d%H%M%S')
-    # key: "value"
-    # key: "value"
+  # variables:
+      # key: "value"
+      # key: "value"
   parameter-store:
     DOCKER_REGISTRY_USERNAME: /dev/monitor-system/docker-credentials/username
     DOCKER_REGISTRY_PASSWORD: /dev/monitor-system/docker-credentials/password
@@ -38,14 +37,14 @@ phases:
     commands:
       - echo "Building the Docker Image"
       - docker build . -t "$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:latest"
-      - docker build . -t "$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:$TIMESTAMP"
+      - docker build . -t "$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:$CODEBUILD_RESOLVED_SOURCE_VERSION"
       # - command
       # - command
   post_build:
     commands:
       - echo "Pushing the docker image to dockerhub"
       - docker push "$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:latest"
-      - docker push "$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:$TIMESTAMP"
+      - docker push "$DOCKER_REGISTRY_USERNAME/codebuild-flask-app:$CODEBUILD_RESOLVED_SOURCE_VERSION"
       # - command
       # - command
 #reports:
